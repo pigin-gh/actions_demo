@@ -46,7 +46,7 @@ class PrintedBook(Book):
         base_str = super().__str__()
         return f"{base_str}, Страниц: {self.pages}, Состояние: {self.condition}"
 
-// Добавил прикольчик в кодик пу пу пу пу
+# Добавил прикольчик в кодик пу пу пу пу
 class EBook(Book):
     
     def __init__(self, title, author, year, file_size, format):
