@@ -26,7 +26,12 @@ class Book:
 
     def __str__(self):
         status = "доступна" if self.__available else "взята"
-        return f"Книга: {self.__title}, Автор: {self.__author}, Год: {self.__year}, Статус: {status}"
+        return (
+            f"Книга: {self.__title}, "
+            f"Автор: {self.__author}, "
+            f"Год: {self.__year}, "
+            f"Статус: {status}"
+        )
 
 
 class PrintedBook(Book):
@@ -44,7 +49,12 @@ class PrintedBook(Book):
 
     def __str__(self):
         base_str = super().__str__()
-        return f"{base_str}, Страниц: {self.pages}, Состояние: {self.condition}"
+        return (
+            f"{base_str}, "
+            f"Страниц: {self.pages}, "
+            f"Состояние: {self.condition}"
+        )
+
 
 # Добавил прикольчик в кодик пу пу пу пу
 
@@ -61,7 +71,11 @@ class EBook(Book):
 
     def __str__(self):
         base_str = super().__str__()
-        return f"{base_str}, Размер: {self.file_size} МБ, Формат: {self.format}"
+        return (
+            f"{base_str}, "
+            f"Размер: {self.file_size} МБ, "
+            f"Формат: {self.format}"
+        )
 
 
 class User:
@@ -149,7 +163,11 @@ class Library:
                 print(f"  - {book}")
 
     def show_available_books(self):
-        available = [book for book in self.__books if book.is_available()]
+        available = [
+            book
+            for book in self.__books
+            if book.is_available()
+        ]
         if not available:
             print("Нет доступных книг")
         else:
